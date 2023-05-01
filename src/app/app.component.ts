@@ -7,8 +7,16 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   texto = ''
+  listEstudiantes: any[] = [
+    {nombre: 'Tomas Gonzales', estado: 'Promocionado'},
+    {nombre: 'Lucas perez', estado: 'Regular'},
+    {nombre: 'Juan garcia', estado: 'Regular'},
+    {nombre: 'Martha Perez', estado: 'Promocionado'},
+    {nombre: 'Nicolas Gomez', estado: 'Libre'},
+  ]
+  mostrar = true
 
-/*  // cambiarTexto(): void {
-  //   this.texto = 'En el próximo video vamos a ver Two way data-binding'
-  // }*/
+  toogle(): void {
+    this.mostrar = !this.mostrar
+  }
 }

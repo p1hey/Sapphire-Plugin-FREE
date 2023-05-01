@@ -1,6 +1,33 @@
 <div class="container mt-4">
-  <!--  <button class="btn btn-primary" (click)="cambiarTexto()">Click me</button>-->
-  <input type="text" name="" id="" class="form-control" placeholder="Escriba algo aquí" [(ngModel)]="texto">
+  <div class="row">
+    <h3>Listado de estudiantes</h3>
+    <button class="btn btn-primary ms-auto w-auto" (click)="toogle()">Toogle</button>
+  </div>
   <br>
-  {{texto}}
+  <table class="table" *ngIf="mostrar">
+    <thead>
+    <th>No</th>
+    <th>Nombre</th>
+    <th>Estado</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let estudiante of listEstudiantes; let i = index" [ngSwitch]="estudiante.estado">
+      <td>{{i + 1}}</td>
+      <td>{{estudiante.nombre}}</td>
+      <td
+        [ngStyle]="{'font-style': estudiante.estado === 'Promocionado' ? 'italic': 'normal'}">
+        <span *ngSwitchCase="'Promocionado'" class="badge bg-success">
+          {{estudiante.estado}}
+        </span>
+        <span *ngSwitchCase="'Regular'" class="badge bg-secondary">
+          {{estudiante.estado}}
+        </span>
+        <span *ngSwitchCase="'Libre'" class="badge bg-danger">
+          {{estudiante.estado}}
+        </span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <h3 *ngIf="listEstudiantes.length ===0">No hay registro para mostrar</h3>
 </div>
