@@ -1,9 +1,6 @@
 <div class="container mt-4">
-  <div class="row">
-    <h3>Mi nombre es {{nombre}}</h3>
-    <br>
-    <input type="text" name="" id="" class="form-control" [placeholder]="textPlaceholder" [disabled]="desabilitado">
-    <br>
-    <img [src]="imgSrc" alt="" width="400px" height="400px">
-  </div>
+  <!--  <button class="btn btn-primary" (click)="cambiarTexto()">Click me</button>-->
+  <input type="text" name="" id="" class="form-control" placeholder="Escriba algo aquí" [(ngModel)]="texto">
+  <br>
+  {{texto}}
 </div>

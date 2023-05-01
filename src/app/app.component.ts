@@ -6,16 +6,9 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'HolaMundo';
-  nombre = 'Juan'
-  textPlaceholder = 'Escriba algo'
-  desabilitado = true
-  imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/640px-Angular_full_color_logo.svg.png'
+  texto = ''
 
-  constructor() {
-    setInterval(() => {
-      this.desabilitado = false
-      this.nombre = 'Javier'
-    }, 3000)
-  }
+/*  // cambiarTexto(): void {
+  //   this.texto = 'En el próximo video vamos a ver Two way data-binding'
+  // }*/
 }
